@@ -1,3 +1,12 @@
+#GEDIT
+*~
+#SQLITE
+*.3db
+
+#C/C++
+*.o
+
+#Java
 *.class
 
 # Package Files #
