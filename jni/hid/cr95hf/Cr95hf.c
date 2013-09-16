@@ -6,7 +6,6 @@
 
 #include "../hidapi/hidapi.h"
 #include "Cr95hf.h"
-#include "reports.h"
 
 // Headers needed for sleeping.
 #ifdef _WIN32
@@ -34,10 +33,6 @@ JNIEXPORT jstring JNICALL Java_Cr95hf_getUID(JNIEnv *env, jobject obj){
 #endif
 
 	struct hid_device_info *devs, *cur_dev;
-	char outReport[REPORT_BUF_LENGTH];
-	//char inReport[REPORT_BUF_LENGTH] = {0x07, 0x80, 0x08, 0xfe, 0xae, 0x69, 0xef, 0xd6};
-	char uid[16] = "uid init";
-
 	devs = hid_enumerate(0x0, 0x0);
 	cur_dev = devs;	
 
@@ -113,7 +108,7 @@ JNIEXPORT jstring JNICALL Java_Cr95hf_getUID(JNIEnv *env, jobject obj){
 
 	buf[0] = 0x01; //report number
 	buf[1] = 0x55;//
-	res = hid_write(handle, outReport, 64);
+	res = hid_write(handle, buf, 64);
 	if (res < 0) {
 		printf("Unable to write()\n");
 		printf("Error: %ls\n", hid_error(handle));
@@ -234,8 +229,7 @@ JNIEXPORT jstring JNICALL Java_Cr95hf_getUID(JNIEnv *env, jobject obj){
 #ifdef WIN32
 	system("pause");
 #endif
-	printf("parsing result is %d\n", parseInHidReport(ISO_14443, buf, uid));
-        report = (const char *)uid;
+        report = (const char *)buf;
 	return (*env)->NewStringUTF(env, report);
 
 }

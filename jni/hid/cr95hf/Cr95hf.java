@@ -1,3 +1,5 @@
+//package cr95hf;
+
 public class Cr95hf{
 
     public native String getUID();

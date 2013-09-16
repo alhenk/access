@@ -4,7 +4,7 @@ all: $(PROGRAMM)
 CC       ?= gcc
 CFLAGS   ?= -Wall -g
 
-COBJS     = hid-libusb.o ../cr95hf/reports.o
+COBJS     = hid-libusb.o 
 OBJS      = $(COBJS)
 LIBS      = `pkg-config libusb-1.0 libudev --libs`
 INCLUDES ?= -I../hidapi `pkg-config libusb-1.0 --cflags`
