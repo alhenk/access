@@ -8,22 +8,29 @@ https://github.com/signal11/hidapi/downloads
 
 
 To build project:
+
 1) check the environment variable JAVA_HOME
+
    echo $JAVA_HOME
+
    JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
    
    if the value isn't actual, correct it (in my case java-7-openjdk-i386).
+
    export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386/
 
 2) compile Cr95hf.java
+
    cd cr95hf
+
    javac Cr95hf.java
 
 3) generate header Cr95hf.h for C hid API native interface
+
    javah -jni Cr95hf.java
 
-4) check the prototype of native functions in C source and 
-   in the above automatically generated header
+4) check the prototype consistency of native functions in C source and 
+   the above automatically generated header
 
 5) compile C sourse to get library file libCr95hf.so
    cd jni/hid

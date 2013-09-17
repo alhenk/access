@@ -2,6 +2,7 @@
 *~
 #SQLITE
 *.3db
+*.db
 
 #C/C++
 *.o
