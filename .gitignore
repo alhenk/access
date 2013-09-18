@@ -2,12 +2,13 @@
 *~
 #SQLITE
 *.3db
-*.db
 
 #C/C++
 *.o
 
 #Java
+org
+org/*
 *.class
 
 # Package Files #
