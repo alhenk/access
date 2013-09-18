@@ -1,7 +1,9 @@
 access
 ======
 
-Access Control with RFID reader CR95hf
+Access Control with RFID reader DEMO-CR95HF-A
+VID=0x0483,PID=0xd0d0
+
 The project is based on:
 hidapi-0.7.0.zip
 https://github.com/signal11/hidapi/downloads
@@ -33,11 +35,15 @@ To build project:
    the above automatically generated header
 
 5) compile C sourse to get library file libCr95hf.so
+
    cd jni/hid
+
    make -C linux
 
 6) run java project
+
    cd cr95hf
+
    sudo java -Djava.library.path=. Cr95hf
 
 
