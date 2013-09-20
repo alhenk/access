@@ -46,4 +46,14 @@ To build project:
 
    sudo java -Djava.library.path=. Cr95hf
 
+EMAIL:
+
+compile and run
+
+javac -classpath lib/*:.  SendEmail.java
+
+java -classpath lib/*:.  SendEmail
+
+
+
 

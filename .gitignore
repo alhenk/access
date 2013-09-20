@@ -1,3 +1,10 @@
+*.zip
+email/lib
+email/javamail-1.4.7
+email/javamail-1.4.7/
+email/jaf-1.1.1
+email/jaf-1.1.1/
+
 #GEDIT
 *~
 #SQLITE
