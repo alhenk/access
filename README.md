@@ -46,4 +46,6 @@ To build project:
 
    sudo java -Djava.library.path=. Cr95hf
 
+7) hello fom newfeature branch!
+
 
